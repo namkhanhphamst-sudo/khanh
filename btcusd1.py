@@ -5,39 +5,47 @@ import math
 # CẤU HÌNH TRANG WEB HOÀNG GIA
 # ==========================================
 st.set_page_config(
-    page_title="Money Management - khanhsteve", 
+    page_title="Trạm Xuất Quân Định Lượng - khanhsteve", 
     page_icon="⚔️", 
     layout="centered"
 )
 
 # ==========================================
-# CỔNG BẢO MẬT ĐẾ VƯƠNG
+# CỔNG BẢO MẬT ĐẾ VƯƠNG (CÓ CƠ CHẾ TÀNG HÌNH)
 # ==========================================
-MAT_KHAU_CHAN_MENH = "khanhnam321"
+MAT_KHAU_CHAN_MENH = "chanmenh2026"
 
-st.title("🛡️ CỔNG BẢO MẬT ĐẾ VƯƠNG")
-nhap_mat_khau = st.text_input(">> Khai báo Mật danh để kích hoạt Lò phản ứng:", type="password")
+# Tạo một cái khung chứa Cổng đăng nhập
+khung_dang_nhap = st.empty()
 
-if nhap_mat_khau != MAT_KHAU_CHAN_MENH:
-    if nhap_mat_khau:
-        st.error("❌ Mật danh sai! Cảnh báo kẻ xâm nhập: Rời khỏi đây ngay lập tức!")
-    
-    st.divider()
-    col_logo_uet, col_text_khanh = st.columns([1, 3])
-    with col_logo_uet:
-        st.image("https://raw.githubusercontent.com/anhducusth/uet-logo/main/logo_uet.png", width=70) 
-    with col_text_khanh:
-        st.markdown("<br>", unsafe_allow_html=True)
-        st.markdown("### 🏛️ UET - ĐẠI HỌC CÔNG NGHỆ")
-        st.markdown("<p style='color: gray; font-style: italic;'>An ninh được thiết lập bởi khanhsteve</p>", unsafe_allow_html=True)
-    st.stop()
+with khung_dang_nhap.container():
+    st.title("🛡️ CỔNG BẢO MẬT ĐẾ VƯƠNG")
+    nhap_mat_khau = st.text_input(">> Khai báo Mật danh để kích hoạt Lò phản ứng:", type="password")
+
+    if nhap_mat_khau != MAT_KHAU_CHAN_MENH:
+        if nhap_mat_khau:
+            st.error("❌ Mật danh sai! Cảnh báo kẻ xâm nhập: Rời khỏi đây ngay lập tức!")
+        
+        st.divider()
+        col_logo_uet, col_text_khanh = st.columns([1, 3])
+        with col_logo_uet:
+            st.image("https://raw.githubusercontent.com/anhducusth/uet-logo/main/logo_uet.png", width=70) 
+        with col_text_khanh:
+            st.markdown("<br>", unsafe_allow_html=True)
+            st.markdown("### 🏛️ UET - ĐẠI HỌC CÔNG NGHỆ")
+            st.markdown("<p style='color: gray; font-style: italic;'>An ninh được thiết lập bởi khanhsteve</p>", unsafe_allow_html=True)
+        
+        # Chặn toàn bộ code bên dưới nếu chưa nhập đúng pass
+        st.stop()
+
+# NẾU NHẬP ĐÚNG PASS: Lệnh này sẽ xóa sạch cái ô nhập mật khẩu đi
+khung_dang_nhap.empty()
 
 # ==========================================
-# GIAO DIỆN CHÍNH (CHỈ CHÂN MỆNH MỚI THẤY)
+# GIAO DIỆN CHÍNH (SAU KHI ĐÃ ĐĂNG NHẬP THÀNH CÔNG)
 # ==========================================
-st.empty() # Xóa giao diện nhập mật khẩu
 
-# --- THANH BÊN (SIDEBAR) ĐỘC QUYỀN ---
+# --- THANH BÊN (SIDEBAR) ---
 with st.sidebar:
     st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
     st.image("https://raw.githubusercontent.com/anhducusth/uet-logo/main/logo_uet.png", width=120)
@@ -55,9 +63,8 @@ with st.sidebar:
     st.divider()
     st.markdown("<p style='text-align: center; color: gray; font-size: 12px;'>Phiên bản độc quyền 2026</p>", unsafe_allow_html=True)
 
-# --- BẢN GIAO HƯỞNG NHỊ PHÂN (HEADER VIDEO/GIF) ---
-# Thần dùng một hình ảnh động (GIF) ma trận nhị phân công nghệ cao làm nền tảng
-st.image("https://i.pinimg.com/originals/3d/82/1f/3d821f0b094ea9c81b53915bcba3d548.gif", use_container_width=True)
+# --- BẢN GIAO HƯỞNG NHỊ PHÂN (ĐÃ ĐỔI LINK ẢNH KHÔNG BỊ RÁCH) ---
+st.image("https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif", use_container_width=True)
 st.markdown("<p style='text-align: center; color: #00FF00; font-family: monospace; font-size: 14px; letter-spacing: 2px;'>BINARY SYSTEM VISUAL - POWERED BY KHANHSTEVE</p>", unsafe_allow_html=True)
 
 st.title("⚔️ TRẠM XUẤT QUÂN ĐỊNH LƯỢNG")
@@ -87,7 +94,7 @@ def co_may_tu_do(ngan_kho, rui_ro_pt, gia_vao, gia_sl, contract_size, commission
     thiet_hai_thuc_te = round(lot_chinh_xac * chi_phi_1_lot, 2)
     return lot_chinh_xac, thiet_hai_thuc_te, khoang_cach_gia, tien_rui_ro_toi_da, chi_phi_1_lot, round(tong_swap_1_lot, 2)
 
-# --- BẢNG ĐIỀU KHIỂN ---
+# --- BẢNG ĐIỀU KHIỂN CHIẾN LƯỢC ---
 col1, col2 = st.columns(2)
 
 with col1:
