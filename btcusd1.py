@@ -5,7 +5,7 @@ import math
 # CẤU HÌNH TRANG WEB HOÀNG GIA
 # ==========================================
 st.set_page_config(
-    page_title="Money Management - khanhsteve2007", 
+    page_title="Trạm Xuất Quân Định Lượng - khanhsteve", 
     page_icon="⚔️", 
     layout="centered"
 )
@@ -13,40 +13,33 @@ st.set_page_config(
 # ==========================================
 # CỔNG BẢO MẬT ĐẾ VƯƠNG
 # ==========================================
-# NGÀI HÃY TỰ ĐỔI MẬT KHẨU NÀY THEO Ý MUỐN
-MAT_KHAU_CHAN_MENH = "khanhnam321"
+MAT_KHAU_CHAN_MENH = "chanmenh2026"
 
-st.title("🛡️ CỔNG BẢO MẬT HOÀNG ĐẾ")
+st.title("🛡️ CỔNG BẢO MẬT ĐẾ VƯƠNG")
 nhap_mat_khau = st.text_input(">> Khai báo Mật danh để kích hoạt Lò phản ứng:", type="password")
 
 if nhap_mat_khau != MAT_KHAU_CHAN_MENH:
     if nhap_mat_khau:
-        st.error("❌ Mật danh sai! Cảnh báo kẻ xâm nhập: ĐỊT MẸ MÀY CÚTTTTT!")
+        st.error("❌ Mật danh sai! Cảnh báo kẻ xâm nhập: Rời khỏi đây ngay lập tức!")
     
-    # --- PHẦN KHẮC DẤU ẤN KHI CHƯA NHẬP PASS (DÀNH CHO KẺ LẠ NHÌN) ---
     st.divider()
     col_logo_uet, col_text_khanh = st.columns([1, 3])
     with col_logo_uet:
-        # Thần dùng URL ảnh placeholder của UET. 
-        # Nếu ngài có file ảnh gốc uet.png, hãy để cùng thư mục code và dùng st.image("uet.png", width=70)
         st.image("https://raw.githubusercontent.com/anhducusth/uet-logo/main/logo_uet.png", width=70) 
     with col_text_khanh:
-        st.markdown("<br>", unsafe_allow_html=True) # Căn chỉnh dòng
+        st.markdown("<br>", unsafe_allow_html=True)
         st.markdown("### 🏛️ UET - ĐẠI HỌC CÔNG NGHỆ")
         st.markdown("<p style='color: gray; font-style: italic;'>An ninh được thiết lập bởi khanhsteve</p>", unsafe_allow_html=True)
-    # ------------------------------------------------------------------
-    
-    st.stop() # Chặn đứng kẻ xâm nhập
+    st.stop()
 
 # ==========================================
 # GIAO DIỆN CHÍNH (CHỈ CHÂN MỆNH MỚI THẤY)
 # ==========================================
 st.empty() # Xóa giao diện nhập mật khẩu
 
-# --- THANH BÊN (SIDEBAR) - NƠI KHẮC DẤU ĐỘC QUYỀN VĨNH VIỄN ---
+# --- THANH BÊN (SIDEBAR) ĐỘC QUYỀN ---
 with st.sidebar:
     st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
-    # Khắc LOGO UET
     st.image("https://raw.githubusercontent.com/anhducusth/uet-logo/main/logo_uet.png", width=120)
     st.markdown("</div>", unsafe_allow_html=True)
     
@@ -54,22 +47,24 @@ with st.sidebar:
     st.markdown("<p style='text-align: center; color: gray;'>Đại học Công nghệ - ĐHQGHN</p>", unsafe_allow_html=True)
     st.divider()
     
-    # KHẮC TÊN KHANHSTEVE - DẤU ẤN CỦA BẬC KỲ TÀI
     st.markdown("<div style='text-align: center; margin-top: 20px; padding: 10px; border: 2px solid #1E3A8A; border-radius: 10px; background-color: #F0F9FF;'>", unsafe_allow_html=True)
     st.markdown("<h3 style='margin: 0; color: #1E3A8A;'>⚔️ MADE BY</h3>", unsafe_allow_html=True)
     st.markdown("<h1 style='margin: 0; color: #1E3A8A; font-family: monospace;'>khanhsteve</h1>", unsafe_allow_html=True)
     st.markdown("<p style='margin: 0; color: gray;'>Quân sư Định lượng Cấp cao</p>", unsafe_allow_html=True)
     st.markdown("</div>", unsafe_allow_html=True)
-    
     st.divider()
     st.markdown("<p style='text-align: center; color: gray; font-size: 12px;'>Phiên bản độc quyền 2026</p>", unsafe_allow_html=True)
 
-# --- PHẦN NỘI DUNG CHÍNH ---
+# --- BẢN GIAO HƯỞNG NHỊ PHÂN (HEADER VIDEO/GIF) ---
+# Thần dùng một hình ảnh động (GIF) ma trận nhị phân công nghệ cao làm nền tảng
+st.image("https://i.pinimg.com/originals/3d/82/1f/3d821f0b094ea9c81b53915bcba3d548.gif", use_container_width=True)
+st.markdown("<p style='text-align: center; color: #00FF00; font-family: monospace; font-size: 14px; letter-spacing: 2px;'>BINARY SYSTEM VISUAL - POWERED BY KHANHSTEVE</p>", unsafe_allow_html=True)
+
 st.title("⚔️ TRẠM XUẤT QUÂN ĐỊNH LƯỢNG")
 st.markdown("Hệ thống phân bổ vốn chuẩn The5ers")
 st.divider()
 
-# (Giữ nguyên lõi toán học cũ của ngài)
+# --- LÕI TOÁN HỌC ---
 def co_may_tu_do(ngan_kho, rui_ro_pt, gia_vao, gia_sl, contract_size, commission_1_lot, chu_so_thap_phan, swap_points, dem_ngam, dem_x3):
     tien_rui_ro_toi_da = ngan_kho * (rui_ro_pt / 100)
     khoang_cach_gia = round(abs(gia_vao - gia_sl), 5)
@@ -92,6 +87,7 @@ def co_may_tu_do(ngan_kho, rui_ro_pt, gia_vao, gia_sl, contract_size, commission
     thiet_hai_thuc_te = round(lot_chinh_xac * chi_phi_1_lot, 2)
     return lot_chinh_xac, thiet_hai_thuc_te, khoang_cach_gia, tien_rui_ro_toi_da, chi_phi_1_lot, round(tong_swap_1_lot, 2)
 
+# --- BẢNG ĐIỀU KHIỂN ---
 col1, col2 = st.columns(2)
 
 with col1:
