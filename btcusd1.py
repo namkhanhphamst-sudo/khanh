@@ -70,7 +70,7 @@ with st.sidebar:
 
 # --- TRÁI TIM CỦA CỖ MÁY: VIDEO GIF BIẾN ĐỘNG GIÁ LÚC LẮC (TRADINGVIEW STYLE) ---
 # Thần đã tìm được một cái GIF chất lượng cao, tối màu, nến xanh đỏ đang chạy uốn lượn hệt như TradingView!
-st.image("https://media.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif", use_container_width=True)
+st.image("https://media.tenor.com/AEx-fC8qXOMAAAAC/trading-stock-market.gif", use_container_width=True)
 st.markdown("<p style='text-align: center; color: #00FF00; font-family: monospace; font-size: 14px; letter-spacing: 2px;'>LIVE MARKET FLOW - POWERED BY KHANHSTEVE</p>", unsafe_allow_html=True)
 
 st.title("⚔️ TRẠM XUẤT QUÂN ĐỊNH LƯỢNG")
