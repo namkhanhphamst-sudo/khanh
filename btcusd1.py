@@ -14,7 +14,7 @@ st.set_page_config(
 # CỔNG BẢO MẬT ĐẾ VƯƠNG (CÓ CƠ CHẾ TÀNG HÌNH)
 # ==========================================
 # NGÀI HÃY TỰ ĐỔI MẬT KHẨU NÀY THEO Ý MUỐN
-MAT_KHAU_CHAN_MENH = "chanmenh2026"
+MAT_KHAU_CHAN_MENH = "khanhnam321"
 
 # Tạo một cái khung chứa Cổng đăng nhập
 khung_dang_nhap = st.empty()
