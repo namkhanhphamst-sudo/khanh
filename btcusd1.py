@@ -5,7 +5,7 @@ import math
 # CẤU HÌNH TRANG WEB HOÀNG GIA
 # ==========================================
 st.set_page_config(
-    page_title="Trạm Xuất Quân Định Lượng - khanhsteve", 
+    page_title="Money Management by khanhsteve", 
     page_icon="⚔️", 
     layout="centered"
 )
