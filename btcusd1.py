@@ -5,7 +5,7 @@ import math
 # CẤU HÌNH TRANG WEB HOÀNG GIA
 # ==========================================
 st.set_page_config(
-    page_title="Trạm Xuất Quân Định Lượng - khanhsteve", 
+    page_title="Money Management - khanhsteve", 
     page_icon="⚔️", 
     layout="centered"
 )
@@ -13,7 +13,7 @@ st.set_page_config(
 # ==========================================
 # CỔNG BẢO MẬT ĐẾ VƯƠNG
 # ==========================================
-MAT_KHAU_CHAN_MENH = "chanmenh2026"
+MAT_KHAU_CHAN_MENH = "khanhnam321"
 
 st.title("🛡️ CỔNG BẢO MẬT ĐẾ VƯƠNG")
 nhap_mat_khau = st.text_input(">> Khai báo Mật danh để kích hoạt Lò phản ứng:", type="password")
